@@ -1,0 +1,42 @@
+<template name="colourPicker">
+  {{#maybeWrapMenu}}
+  <div class="colour-picker" data-property="{{property}}">
+    <div>
+      {{#if allowNone}}
+      <a class="pull-right" href="#"  data-colour="">none</a>
+      {{/if}}
+      <h1 class="pull-left">{{title}}</h1>
+      <div class="clearfix"></div>
+    </div>
+    <hr />
+    {{#each colourTableLayout}}
+      <div class="colour-picker-box">
+      {{#each this}}
+        <div class="colour-picker-row">
+          {{#each this}}
+            <a href="#" data-colour="{{hex}}" title="{{name}}" class="colour-picker-block" style="{{style hex}}"></a>
+          {{/each}}
+          <div class="clearfix"></div>
+        </div>
+      {{/each}}
+      </div>
+    {{/each}}
+    <div class="colour-picker-selected"><div class="colour-picker-selected-colour" style="{{style selectedColour}}"></div><span>Selected Colour:</span></div>
+  </div>
+  {{/maybeWrapMenu}}
+</template>
+
+<template name="_colourPicker_wrapBootstrapMenu">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="colour-picker-selected-block" style="background: {{selectedColour}};"></span>&nbsp;&nbsp;<span class="caret"></span>
+    </button>
+    <div class="dropdown-menu">
+      {{> UI.contentBlock}}
+    </div>
+    <input name="selectedColour" type="hidden" value="{{selectedColour}}"/>
+  </div>
+</template>
+
+<template name="_colourPicker_wrapNoop">{{> UI.contentBlock}}</template>
+

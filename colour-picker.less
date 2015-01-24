@@ -1,0 +1,68 @@
+.colour-picker-selected-block {
+  display: inline-block;
+  border: 1px solid #333;
+  height: 15px;
+  width: 15px;
+  vertical-align: top;
+  margin-top: 2px;
+  /* if no colour selected */
+  background: white;
+  background-image: linear-gradient(45deg, #e9e9e9 25%, transparent 25%, transparent 75%, #e9e9e9 75%, #e9e9e9), linear-gradient(45deg, #e9e9e9 25%, transparent 25%, transparent 75%, #e9e9e9 75%, #e9e9e9);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+}
+
+.colour-picker {
+  width: 237px;
+  height: auto;
+
+  padding: 10px;
+  margin: 0 5px;
+
+  h1 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+  }
+  hr {
+    margin: 4px 0 8px;
+  }
+
+  .colour-picker-box {
+    & + .colour-picker-box {
+      margin-top: 10px;
+    }
+    background-color: #333;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    .colour-picker-row {
+      .colour-picker-block {
+        display: block;
+        float: left;
+        width: 23px;
+        height: 23px;
+
+        margin-left: 1px;
+        margin-top: 1px;
+        &:hover {
+          border: 3px solid #fff;
+        }
+      }
+    }
+  }
+
+  .colour-picker-selected {
+    padding: 0px;
+    margin-top: 15px;
+    span {
+      line-height: 25px;
+    }
+    .colour-picker-selected-colour {
+      float: right;
+      width: 50px;
+      height: 25px;
+      border: 1px solid #000;
+    }
+  }
+}
