@@ -1,5 +1,4 @@
-"use strict";
-ColourPickerPalate = _.flatten(this.colourTableLayout);
+ColourPickerPalate = _.flatten(colourTableLayout);
 ColourPickerPalatePrimary = _.where(ColourPickerPalate, {
   primary: true
 });

@@ -1,5 +1,4 @@
-"use strict";
-this.colourTableLayout = [
+colourTableLayout = [
   [
     [
       {

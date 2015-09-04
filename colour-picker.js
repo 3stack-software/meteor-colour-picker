@@ -1,5 +1,3 @@
-"use strict";
-var colourTableLayout = this.colourTableLayout;
 Template.colourPicker.helpers({
   title: function() {
     return this.property.charAt(0).toUpperCase() + this.property.slice(1) + " Colour";
