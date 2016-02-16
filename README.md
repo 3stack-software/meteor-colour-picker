@@ -10,7 +10,15 @@ Usage
 
 Add to a template:
 
-`{{> colourPicker selectedColour=someSessionValue property='fill' menu=true allowNone=true}}`
+```
+{{> colourPicker
+  selectedColour=fillColour
+  handleSelect=handleFillSelect
+  property='fill'
+  menu=true
+  allowNone=true
+}}
+```
 
 
 Then, catch events:
@@ -18,13 +26,11 @@ Then, catch events:
 ```js
 
 Template.myTemplate.helpers({
-  someSessionValue: function(){ return Session.get('someSessionValue'); }
-});
-
-Template.myTemplate.events({
-  'click a[data-colour]': function(e){
-    e.preventDefault();
-    Session.set('someSessionValue', $(e.currentTarget).data('colour'));
+  fillColour: function(){ return Session.get('someSessionValue'); },
+  handleFillSelect: function(){
+    return function(colour){
+      Session.set('someSessionValue', colour);
+    };
   }
 });
 

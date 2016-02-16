@@ -16,3 +16,12 @@ Template.colourPicker.helpers({
     }
   }
 });
+
+Template.colourPicker.events({
+  'click a[data-colour]': function(e, tpl){
+    e.preventDefault();
+    var colour = $(e.currentTarget).data('colour');
+    if (colour == '') colour = null;
+    tpl.data.handleSelect(colour);
+  }
+});
