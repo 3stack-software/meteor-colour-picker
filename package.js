@@ -1,6 +1,6 @@
 Package.describe({
   name: '3stack:colour-picker',
-  version: '0.2.0',
+  version: '0.3.0',
   summary: 'A basic, reactive colour picker component',
   git: 'https://github.com/3stack-software/meteor-colour-picker',
   documentation: 'README.md'
