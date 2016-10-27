@@ -17,12 +17,17 @@ Package.onUse(function (api) {
     "less",
     "tracker",
     "templating",
-    "spacebars"
+    "spacebars",
+    "ecmascript",
+    "react@0.14.1_1"
   ], ['client']);
 
-
-  api.export('ColourPickerPalate');
-  api.export('ColourPickerPalatePrimary');
+  api.export([
+    'ColourPickerPalate',
+    'ColourPickerPalatePrimary',
+    'ColourPickerControl',
+    'ColourPickerButton'
+  ]);
 
   api.addFiles([
      'colour-table-layout.js',
@@ -32,6 +37,7 @@ Package.onUse(function (api) {
   api.addFiles([
     'colour-picker.html',
     'colour-picker.js',
+    'colour-picker.jsx',
     'colour-picker.less'
   ], 'client');
 });

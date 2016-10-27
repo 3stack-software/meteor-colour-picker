@@ -5,7 +5,7 @@ A basic colour picker. Styled to match bootstrap-3.
 
 
 
-Usage
+Usage (Blaze)
 -----------------------
 
 Add to a template:
@@ -64,6 +64,31 @@ wraps in a bootstrap menu. Write your own like this:
     <input name="selectedColour" type="hidden" value="{{selectedColour}}"/>
   </div>
 ```
+
+Usage (React)
+-----------------------
+
+Menu Style -
+```
+<ColourPickerButton
+  value={myValue}
+  onChange={myFunc}
+  title="Fill"
+  allowNone=false
+/>
+```
+
+Raw Div - Similar to (menu=false) on blaze version
+```
+<ColourPickerControl
+  value={myValue}
+  onChange={myFunc}
+  title="Fill"
+  allowNone=false
+/>
+```
+
+
 
 Advanced
 -----------------------
