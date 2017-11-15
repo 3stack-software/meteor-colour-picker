@@ -1,6 +1,6 @@
 Package.describe({
   name: '3stack:colour-picker',
-  version: '0.4.0',
+  version: '0.5.0',
   summary: 'A basic, reactive colour picker component',
   git: 'https://github.com/3stack-software/meteor-colour-picker',
   documentation: 'README.md'
@@ -8,7 +8,7 @@ Package.describe({
 
 
 Package.onUse(function (api) {
-  api.versionsFrom('METEOR@1.2.1');
+  api.versionsFrom('METEOR@1.4');
 
   api.use([
     "underscore"
@@ -19,7 +19,7 @@ Package.onUse(function (api) {
     "templating",
     "spacebars",
     "ecmascript",
-    "react@0.14.1_1"
+    "react@15.0.1"
   ], ['client']);
 
   api.export([
